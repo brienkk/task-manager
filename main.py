@@ -16,14 +16,14 @@ def show_list():
         print(f"{number}, {list_item}")
 #function for deleting items from lists    
 def delete_task():
-    print(show_list())
+    show_list()
     task_to_delete = input('What item would you like to remove from the list, use a number')
     task_number = int(task_to_delete)
     task_string = to_do_list.pop(task_number - 1)
     
 #function for adding items to completed list 
 def task_finished():
-    print(show_list())
+    show_list()
     task_to_move = input('What task have you finished')
     task_number = int(task_to_move)
     task_string = to_do_list.pop(task_number - 1)
@@ -33,7 +33,7 @@ while True:
     print(intro_msg)
     ask = input('1. See list ' '2. Add task ' '3. Delete Task ' '4. Add to completed ' '5. Quit' )
     if ask == '1' or ask == 'See list':
-        print(show_list())
+        show_list()
     elif ask == '2' or ask == 'Add task':
         add_task()
     elif ask == '3' or ask == 'Delete task':
