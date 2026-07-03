@@ -43,6 +43,9 @@ while True:
         print(completed_tasks)
     elif ask == '5' or ask == 'quit':
         break
+    else:
+        print('That is not a valid answer please choose either the number or the name of what you want to do' )
+    
 
 
 
