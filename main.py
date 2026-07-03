@@ -14,7 +14,7 @@ def add_task():
 while True: 
     print(intro_msg)
     ask = input('1. See list ' '2. Add task ' '3. Delete Task ' '4. Add to completed')
-    if ask == '1' or 'See list':
+    if ask == '1' or ask == 'See list':
         print(to_do_list)
     break
 
