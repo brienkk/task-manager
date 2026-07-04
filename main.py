@@ -28,6 +28,11 @@ def task_finished():
     task_number = int(task_to_move)
     task_string = to_do_list.pop(task_number - 1)
     completed_tasks.append(task_string)
+#function for saving lists
+def save_task():
+    data = {"to-do": to_do_list, "completed": completed_tasks}
+    with open('to_do_list.json', 'w') as f:
+        json.dump(data, f)
 
 while True: 
     print(intro_msg)
@@ -36,11 +41,14 @@ while True:
         show_list()
     elif ask == '2' or ask == 'Add task':
         add_task()
+        save_task()
     elif ask == '3' or ask == 'Delete task':
         delete_task()
+        save_task()
     elif ask == '4' or ask == 'Add to completed':
         task_finished()
         print(completed_tasks)
+        save_task()
     elif ask == '5' or ask == 'quit':
         break
     else:
